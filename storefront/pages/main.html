@@ -1,0 +1,31 @@
+<script>
+    module.exports = {
+        onCreate() {
+            this.visitCount = 0;
+        },
+        onRequest(req) {
+            this.visitCount++;
+        }
+    }
+</script>
+
+<template>
+    <html>
+
+    <head>
+        <title>Product</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <fragment from="platform-gw" name="header"> </fragment>
+        <fragment from="browsing-gw" name="album"> </fragment>
+        <fragment from="platform-gw" name="footer"> </fragment>
+        <div>
+            This page is viewed ${this.visitCount} times.
+        </div>
+    </body>
+
+    </html>
+</template>
