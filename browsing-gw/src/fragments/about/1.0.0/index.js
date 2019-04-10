@@ -4,7 +4,7 @@ const main = fs.readFileSync(path.join(__dirname, "./index.html"), "utf8");
 
 module.exports = {
     placeholder() {
-        return 'Loading products...';
+        return 'Loading about...';
     },
     data(req) {
         return { data: {} }

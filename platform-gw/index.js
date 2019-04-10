@@ -1,3 +1,6 @@
+process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
+process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
+
 const PuzzleJs = require('puzzle-microfrontends');
 const path = require('path');
 
@@ -15,7 +18,7 @@ const gateway = new PuzzleJs.Gateway({
                 }
             },
             render: {
-                url: "/*"
+                url: "*"
             }
         },
         {
@@ -29,7 +32,7 @@ const gateway = new PuzzleJs.Gateway({
                 }
             },
             render: {
-                url: "/*"
+                url: "*"
             }
         }
     ],

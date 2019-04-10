@@ -1,3 +1,5 @@
+process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
+process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
 const PuzzleJs = require('puzzle-microfrontends');
 const path = require('path');
 
@@ -15,8 +17,22 @@ const gateway = new PuzzleJs.Gateway({
                 }
             },
             render: {
-                url: "/*",
+                url: "*",
                 placeholder: true
+            }
+        },
+        {
+            name: "about",
+            testCookie: "my-about-ab",
+            version: "1.0.0",
+            versions: {
+                "1.0.0": {
+                    assets: [],
+                    dependencies: []
+                }
+            },
+            render: {
+                url: "*"
             }
         },
         {
@@ -30,7 +46,22 @@ const gateway = new PuzzleJs.Gateway({
                 }
             },
             render: {
-                url: "/*"
+                url: "*"
+            }
+        },
+        {
+            name: "item",
+            testCookie: "my-header-ab",
+            version: "1.0.0",
+            versions: {
+                "1.0.0": {
+                    assets: [],
+                    dependencies: []
+                }
+            },
+            render: {
+                url: "/photo/:id",
+                placeholder: true
             }
         }
     ],

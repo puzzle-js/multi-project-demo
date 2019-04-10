@@ -6,15 +6,15 @@ const getAlbums = require("./getAlbums");
 module.exports = {
     placeholder() {
         return `
-        <div class="container">
-            <h1>Loading Albums</h1>
+        <div class="container text-center">
+            <img src="https://loading.io//spinners/rolling/lg.curve-bars-loading-indicator.gif"/>
         </div>
         `;
     },
     async data(req) {
         const albums = await getAlbums();
 
-        await new Promise(res => setTimeout(res, 1000));
+        await new Promise(res => setTimeout(res, 3000));
 
         return {
             data: albums.data.slice(0, 10)
@@ -29,8 +29,7 @@ module.exports = {
                 <p class="card-text">${item.title}</p>
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                        <a href="/photo/${item.id}" class="btn btn-sm btn-outline-secondary">Edit</a>
                     </div>
                     <small class="text-muted">9 mins</small>
                 </div>
