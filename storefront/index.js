@@ -1,3 +1,6 @@
+process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
+process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
+
 const PuzzleJs = require('puzzle-microfrontends');
 const path = require('path');
 const fs = require('fs');
@@ -7,11 +10,11 @@ const storefront = new PuzzleJs.Storefront({
     gateways: [
         {
             name: 'platform-gw',
-            url: 'http://localhost:4444/',
+            url: 'http://10.10.54.130:4444/',
         },
         {
             name: 'browsing-gw',
-            url: 'http://localhost:4443/',
+            url: 'http://10.10.54.130:4443/',
         }
     ],
     pages: [
@@ -19,6 +22,16 @@ const storefront = new PuzzleJs.Storefront({
             name: 'homepage',
             url: '/',
             html: fs.readFileSync(path.join(__dirname, './pages/main.html'), 'utf8')
+        },
+        {
+            name: 'about',
+            url: '/about',
+            html: fs.readFileSync(path.join(__dirname, './pages/about.html'), 'utf8')
+        },
+        {
+            name: 'photo',
+            url: '/photo/:id',
+            html: fs.readFileSync(path.join(__dirname, './pages/photo.html'), 'utf8')
         }
     ],
     dependencies: []

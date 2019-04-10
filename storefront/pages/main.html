@@ -2,9 +2,13 @@
     module.exports = {
         onCreate() {
             this.visitCount = 0;
+            this.chunkCount = 0;
         },
         onRequest(req) {
             this.visitCount++;
+        },
+        onChunk(req) {
+            this.chunkCount++;
         }
     }
 </script>
@@ -21,9 +25,13 @@
     <body>
         <fragment from="platform-gw" name="header"> </fragment>
         <fragment from="browsing-gw" name="album"> </fragment>
+        <fragment from="browsing-gw" name="price"> </fragment>
         <fragment from="platform-gw" name="footer"> </fragment>
-        <div>
-            This page is viewed ${this.visitCount} times.
+        <div class="container text-center">
+            <h1>This page is viewed ${this.visitCount} times.</h1>
+        </div>
+        <div class="container text-center">
+            <h1>Chunks sent: ${this.chunkCount}</h1>
         </div>
     </body>
 
