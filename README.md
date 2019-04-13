@@ -1,3 +1,3 @@
-# multi-project-demo
+# Multi Project Demo
 
-Multi page demo.
+This demo has updated version of PuzzleJs implementation with 1 storefront 2 gateway projects. 
