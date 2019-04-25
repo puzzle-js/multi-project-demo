@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "browsing-gw/package.json",
+        "browsing-gw/src/fragments/album/1.0.0/package.json",
+        "browsing-gw/src/fragments/item/1.0.0/package.json",
+        "platform-gw/package.json",
+        "storefront/package.json"
+      ]
+    }
+  }
+}
