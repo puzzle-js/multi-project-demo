@@ -10,11 +10,11 @@ const storefront = new PuzzleJs.Storefront({
     gateways: [
         {
             name: 'platform-gw',
-            url: 'http://10.10.54.130:4444/',
+            url: 'http://localhost:4444/',
         },
         {
             name: 'browsing-gw',
-            url: 'http://10.10.54.130:4443/',
+            url: 'http://localhost:4443/',
         }
     ],
     pages: [
