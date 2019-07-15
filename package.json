@@ -1,0 +1,23 @@
+{
+  "name": "multi-project-demo",
+  "version": "1.0.0",
+  "description": "This demo has updated version of PuzzleJs implementation with 1 storefront 2 gateway projects.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "glob": "^7.1.4"
+  },
+  "scripts": {
+    "build": "node tools/builder.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puzzle-js/multi-project-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puzzle-js/multi-project-demo/issues"
+  },
+  "homepage": "https://github.com/puzzle-js/multi-project-demo#readme"
+}
