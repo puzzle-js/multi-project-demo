@@ -1,7 +1,7 @@
 process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
 process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
 
-const PuzzleJs = require('puzzle-microfrontends');
+const PuzzleJs = require('@puzzle-js/core');
 const path = require('path');
 
 const gateway = new PuzzleJs.Gateway({
@@ -39,8 +39,10 @@ const gateway = new PuzzleJs.Gateway({
     api: [
 
     ],
-    port: 4444,
-    url: 'http://localhost:4444',
+    serverOptions: {
+        port: 4444
+    },
+    url: 'https://localhost:4444',
     fragmentsFolder: path.join(__dirname, "./src/fragments")
 });
 

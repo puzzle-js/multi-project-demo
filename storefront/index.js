@@ -1,12 +1,18 @@
 process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
 process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
 
-const PuzzleJs = require('puzzle-microfrontends');
+const PuzzleJs = require('@puzzle-js/core');
 const path = require('path');
 const fs = require('fs');
 
 const storefront = new PuzzleJs.Storefront({
-    port: 4445,
+    serverOptions: {
+        port: 4445,
+        https: {
+            key: fs.readFileSync(path.join(__dirname, '/secrets/key.pem')),
+            cert: fs.readFileSync(path.join(__dirname, '/secrets/cert.pem'))
+        }
+    },
     gateways: [
         {
             name: 'platform-gw',
@@ -14,7 +20,7 @@ const storefront = new PuzzleJs.Storefront({
         },
         {
             name: 'browsing-gw',
-            url: 'http://localhost:4443/',
+            url: 'https://localhost:4443/',
         }
     ],
     pages: [

@@ -10,13 +10,14 @@ yarn build
 ```
 
 ## Run 
-All projects must be run separetly. 
+All projects must be run separately. 
 ### BrowsingGW
 ```
 cd browsing-gw/
 yarn start
 ```
-* starts at http://localhost:4443/
+* starts at https://localhost:4443/
+* HTTPS/H2 active
 ### PlatformGW
 ```
 cd platform-gw/
@@ -28,4 +29,5 @@ yarn start
 cd storefront/
 yarn start
 ```
-* starts at http://localhost:4445/
+* starts at https://localhost:4445/
+* HTTPS active

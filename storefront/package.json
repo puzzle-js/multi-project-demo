@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED=0 node ./index.js"
   },
   "dependencies": {
-    "puzzle-microfrontends": "^3.32.1"
+    "@puzzle-js/core": "^2.0.0",
+    "puzzle-microfrontends": "^3.32.6"
   }
 }
