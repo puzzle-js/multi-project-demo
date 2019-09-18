@@ -1,6 +1,9 @@
+const fs = require('fs');
+
 process.env.DEFAULT_CONTENT_TIMEOUT = "70000";
 process.env.GLOBAL_REQUEST_TIMEOUT = "75000";
-const PuzzleJs = require('puzzle-microfrontends');
+
+const PuzzleJs = require('@puzzle-js/core');
 const path = require('path');
 
 const gateway = new PuzzleJs.Gateway({
@@ -65,11 +68,16 @@ const gateway = new PuzzleJs.Gateway({
             }
         }
     ],
-    api: [
-
-    ],
-    port: 4443,
-    url: 'http://localhost:4443',
+    api: [],
+    serverOptions: {
+        port: 4443,
+        http2: true,
+        https: {
+            key: fs.readFileSync(path.join(__dirname, '/src/secrets/key.pem')),
+            cert: fs.readFileSync(path.join(__dirname, '/src/secrets/cert.pem'))
+        }
+    },
+    url: 'https://localhost:4443',
     fragmentsFolder: path.join(__dirname, "./src/fragments")
 });
 

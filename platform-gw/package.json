@@ -7,6 +7,6 @@
     "start": "node ./index.js"
   },
   "dependencies": {
-    "puzzle-microfrontends": "^3.32.1"
+    "@puzzle-js/core": "^2.0.0"
   }
 }
